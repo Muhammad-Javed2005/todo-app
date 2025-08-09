@@ -1,0 +1,59 @@
+/* static/style.css - simple clean styling */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --danger:#ef4444;
+  --success:#16a34a; --shadow: 0 6px 18px rgba(15,23,42,0.07);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background:var(--bg); color:#0f172a}
+.container{max-width:980px; margin:24px auto; padding:0 16px}
+
+.topbar{background:var(--card); box-shadow:var(--shadow)}
+.topbar .container{display:flex; align-items:center; justify-content:space-between; padding:10px 16px}
+.brand{font-weight:700; color:var(--accent); text-decoration:none; font-size:18px}
+nav a{margin-left:8px; text-decoration:none}
+
+.header, .panel {background:var(--card); border-radius:10px; padding:16px; box-shadow:var(--shadow);}
+
+.auth-card{width:100%; max-width:420px; margin:40px auto; background:var(--card); padding:20px; border-radius:8px; box-shadow:var(--shadow)}
+.auth-card h2{margin-top:0}
+.auth-card label{display:block; margin:10px 0; font-size:14px}
+.auth-card input, .auth-card textarea, .search-form input{width:100%; padding:8px 10px; border:1px solid #e6edf3; border-radius:6px; outline:none}
+.auth-card .row{display:flex; gap:10px; align-items:center; margin-top:10px}
+
+.btn{display:inline-block; padding:8px 12px; border-radius:8px; background:var(--accent); color:white; text-decoration:none; border:none; cursor:pointer}
+.btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(37,99,235,0.12)}
+.btn.small{padding:6px 8px; font-size:13px}
+.btn.danger{background:var(--danger)}
+.btn.primary{background:var(--accent)}
+.btn.small.ghost{padding:4px 8px}
+
+.panel{padding:14px; margin-top:16px}
+.panel-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px}
+.search-form{display:flex; gap:8px; align-items:center}
+.search-form input{width:260px}
+
+.todo-list{list-style:none; padding:0; margin:0}
+.todo{display:flex; justify-content:space-between; align-items:flex-start; padding:12px; border-bottom:1px solid #f1f5f9}
+.todo .left{display:flex; gap:12px; align-items:flex-start}
+.check-btn{border:none; background:#f1f5f9; width:36px; height:36px; border-radius:8px; cursor:pointer}
+.title{display:block}
+.dued{font-size:13px; color:var(--muted)}
+.desc{font-size:13px; color:var(--muted); margin-top:6px}
+.actions{display:flex; gap:8px}
+.todo.done .title{ text-decoration: line-through; color:var(--muted)}
+
+.footer{padding:14px; text-align:center; color:var(--muted); margin-top:24px}
+
+.flash-wrap{margin-bottom:12px}
+.flash{padding:10px 12px; border-radius:8px; margin-bottom:8px}
+.flash.success{background:#ecfdf5; color:var(--success)}
+.flash.danger{background:#fff1f2; color:var(--danger)}
+.flash.info{background:#eff6ff; color:var(--accent)}
+
+@media (max-width:720px){
+  .container{padding:0 12px}
+  .search-form input{width:120px}
+  .auth-card{margin:20px 12px}
+}

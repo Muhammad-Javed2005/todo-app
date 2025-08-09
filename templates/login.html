@@ -1,0 +1,19 @@
+<!-- templates/login.html -->
+{% extends "layout.html" %}
+{% block content %}
+  <div class="auth-card">
+    <h2>Login</h2>
+    <form method="post" action="{{ url_for('login') }}">
+      <label>Username
+        <input type="text" name="username" required autofocus>
+      </label>
+      <label>Password
+        <input type="password" name="password" required>
+      </label>
+      <div class="row">
+        <button class="btn primary" type="submit">Login</button>
+        <a class="link" href="{{ url_for('register') }}">Create account</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

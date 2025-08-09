@@ -1,0 +1,31 @@
+<!-- templates/task_form.html -->
+{% extends "layout.html" %}
+{% block content %}
+  <div class="panel">
+    <h2>{{ action }} Task</h2>
+    <form method="post">
+      <label>Title
+        <input type="text" name="title" required value="{{ task.title if task }}">
+      </label>
+
+      <label>Description
+        <textarea name="description" rows="4">{{ task.description if task }}</textarea>
+      </label>
+
+      <label>Due date (YYYY-MM-DD)
+        <input type="date" name="due_date" value="{{ task.due_date if task }}">
+      </label>
+
+      {% if task %}
+        <label class="row-inline">
+          <input type="checkbox" name="done" {% if task.done %}checked{% endif %}> Done
+        </label>
+      {% endif %}
+
+      <div class="row">
+        <button class="btn primary" type="submit">{{ action }}</button>
+        <a class="btn ghost" href="{{ url_for('dashboard') }}">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
